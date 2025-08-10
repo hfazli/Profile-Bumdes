@@ -11,7 +11,6 @@ import img1 from "../public/desa.jpg";
 import imgDesa2 from "../public/desa2.jpg";
 import imgEmpang from "../public/empang.jpg";
 import imgLele from "../public/lele.jpg";
-import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 // Swiper

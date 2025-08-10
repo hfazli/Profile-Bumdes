@@ -2,7 +2,6 @@ import Head from "next/head";
 import NavBarTop from "../components/NavBarTop";
 import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
-import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { useState, useEffect, useCallback } from "react";
 import BackToTop from "../components/BackToTop";
@@ -230,7 +229,21 @@ export default function Foto({ photos }) {
                     <div className="row mb-5">
                         <div className="col-lg-12">
                             <h3 className="text-color-primary text-center mb-4">Galeri Kegiatan KKN</h3>
-                            <Gallery photos={photos} onClick={openLightbox} />
+                            <div className="row g-3">
+                                {photos.map((photo, index) => (
+                                    <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                                        <div className="card border-0 shadow-sm">
+                                            <img 
+                                                src={photo.src} 
+                                                alt={photo.alt || `Foto ${index + 1}`}
+                                                className="card-img-top"
+                                                style={{ height: '200px', objectFit: 'cover', cursor: 'pointer' }}
+                                                onClick={() => openLightbox(null, { photo, index })}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                             <ModalGateway>
                                 {viewerIsOpen ? (
                                     <Modal onClose={closeLightbox}>
