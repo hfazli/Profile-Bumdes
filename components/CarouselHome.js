@@ -80,6 +80,7 @@ export default function CarouselHome() {
                             width="1920"
                             height="960"
                             className="d-block w-100 carousel-zoom"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
                         <div className="carousel-overlay"></div>
                         <div className="carousel-caption">
@@ -94,6 +95,7 @@ export default function CarouselHome() {
                             width="1920"
                             height="960"
                             className="d-block w-100 carousel-zoom"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
                         <div className="carousel-overlay"></div>
                         <div className="carousel-caption">
@@ -108,6 +110,7 @@ export default function CarouselHome() {
                             width="1920"
                             height="960"
                             className="d-block w-100 carousel-zoom"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
                         <div className="carousel-overlay"></div>
                         <div className="carousel-caption">

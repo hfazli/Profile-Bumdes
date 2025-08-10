@@ -38,33 +38,39 @@ export default function Footer() {
 
             <footer className="bg-dark text-white border-top-primary">
                 <div className="container pt-5">
-                    <div className="row">
-                        <div className="col-md-8 col-lg-4 my-2 my-md-0">
+                    <div className="row justify-content-center">
+                        <div className="col-md-8 col-lg-4 my-2 my-md-0 text-center text-md-start">
                             <h4>Tentang Web</h4>
-                            <Image src={imgLogo} className="img-fluid mb-2" alt="image" height={100} width={100} />
-                            <p className="text-white-80 text-15">Website Resmi Desa {namaDesa}, Kec. {namaKecamatan}, Kabupaten Bangkalan, Jawa
-                                Timur. Media komunikasi dan transparansi Pemerintah Desa</p>
+                            <div className="d-flex justify-content-center justify-content-md-start mb-2">
+                                <Image src={imgLogo} className="img-fluid" alt="image" height={100} width={100} />
+                            </div>
+                            <p className="text-white-80 text-15">Website Resmi Desa {namaDesa}, Kec. {namaKecamatan}, Kabupaten Bekasi, Jawa
+                                Barat. Media komunikasi dan transparansi Pemerintah Desa</p>
                         </div>
-                        <div className="col-md-6 col-lg-3 my-2 my-md-0">
+                        <div className="col-md-6 col-lg-3 my-2 my-md-0 text-center text-md-start">
                             <h5 className="mb-3">Kontak Desa</h5>
                             <ul className="list-unstyled text-white-80 text-decoration-none text-15">
                                 <li className="my-2">
-                                    <div className="d-flex">
+                                    <div className="d-flex justify-content-center justify-content-md-start">
                                         <i className="me-2"><FaMapMarkerAlt/></i>
-                                        Jl. Raya {namaDesa} Kec. {namaKecamatan}, Bangkalan, 69116
+                                        <span>Jl. Kedung Gede No.39, Kedungwaringin, Kec. Kedungwaringin, Kabupaten Bekasi, Jawa Barat 17540</span>
                                     </div>
                                 </li>
                                 <li className="my-2">
-                                    <i className="me-2"><FaPhoneAlt/></i>
-                                    081 234 567 89
+                                    <div className="d-flex justify-content-center justify-content-md-start">
+                                        <i className="me-2"><FaPhoneAlt/></i>
+                                        <span>081 234 567 89</span>
+                                    </div>
                                 </li>
                                 <li className="my-2">
-                                    <i className="me-2"><FaEnvelope/></i>
-                                    admin@web.id
+                                    <div className="d-flex justify-content-center justify-content-md-start">
+                                        <i className="me-2"><FaEnvelope/></i>
+                                        <span>desakedungwaringin767@gmail.com</span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-6 col-lg-3 my-2 my-md-0">
+                        <div className="col-md-6 col-lg-3 my-2 my-md-0 text-center text-md-start">
                             <h5 className="mb-3">Kontak Penting</h5>
                             <ul className="list-unstyled text-white-80 text-decoration-none text-15">
                                 <li className="my-2">
@@ -77,31 +83,14 @@ export default function Footer() {
                                     Damkar - (0321) 854928
                                 </li>
                                 <li className="my-2">
-                                    PLN - 123
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-md-6 col-lg-2 my-2 my-md-0">
-                            <h5 className="mb-3">Aplikasi Desa</h5>
-                            <ul className="list-unstyled text-white-80 text-decoration-none text-15">
-                                <li className="my-2">
-                                    <a href="https://web-anjungan-desa.vercel.app" className="text-decoration-none text-white-80" rel="noreferrer" target="_blank">Sistem Desa</a>
-                                </li>
-                                <li className="my-2">
-                                    <a href="https://web-anjungan-desa.vercel.app" className="text-decoration-none text-white-80" rel="noreferrer" target="_blank">Pengaduan Online</a>
-                                </li>
-                                <li className="my-2">
-                                    <a href="https://web-anjungan-desa.vercel.app" className="text-decoration-none text-white-80" rel="noreferrer" target="_blank">Pengajuan Surat</a>
-                                </li>
-                                <li className="my-2">
-                                    <a href="https://web-anjungan-desa.vercel.app" className="text-decoration-none text-white-80" rel="noreferrer" target="_blank">Info Kesehatan</a>
+                                    PLN - (021) 89108282
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="row pt-3 pb-md-0 mt-4 border-top-dark">
                         <div className="col-md-8  text-center text-md-start text-15">
-                            <p className="text-white-80">Copyright © 
+                            <p className="text-white-80">Copyright © KKN 8 Kedungwaringin 2025
                                 <a href="#" className="text-decoration-none text-white-80"> Desa {namaDesa}</a>. 
                                 All rights reserved
                             </p>
@@ -114,7 +103,7 @@ export default function Footer() {
                                 <i className=""><FaTwitter /></i>
                             </a>
                             <a href="https://www.youtube.com/" className="mx-2 text-white-80" aria-label="Youtube" rel="noreferrer" target="_blank">
-                                <i className=""><FaYoutube /></i>
+                                <i className=""><FaYoutube /></i>s
                             </a>
                             <a href="https://www.instagram.com/" className="mx-2 text-white-80" aria-label="Instagram" rel="noreferrer" target="_blank">
                                 <i className=""><FaInstagram /></i>

@@ -29,6 +29,7 @@ export default function AgendaList({ id, image, title, slug, date }) {
                             width="200"
                             height="160"
                             className="img-fluid rounded"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
                     </div>
                     <div className="col-8 px-0">

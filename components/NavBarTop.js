@@ -35,7 +35,7 @@ export default function NavBarTop() {
             <style jsx>
                 {`
                     .nav-item a.active {
-                        color: #0d6efd !important;
+                        color: #838383ff !important;
                     }
                     .nav-item a:hover {
                         color: var(--text-color-secondary) !important;
@@ -48,6 +48,15 @@ export default function NavBarTop() {
                     }
                     .dropdown-menu {
                         min-width: 13rem; 
+                    }
+                    .dropdown-item:hover {
+                        background-color: #f8f9fa !important;
+                        color: var(--text-color-secondary) !important;
+                    }
+                    .dropdown-item.active,
+                    .dropdown-item:active {
+                        background-color: transparent !important;
+                        color: var(--text-color-secondary) !important;
                     }
                     .top-of-navbar a:hover {
                         color: #0d6efd !important;
@@ -76,14 +85,14 @@ export default function NavBarTop() {
                     <div className="row">
                         <div className="col-lg-6 col-sm-8">
                             <div className="">
-                                <a href="https://wa.me/68123456789" rel="noreferrer" target="_blank" className="text-decoration-none text-14 text-color-tertiary">
+                                <a rel="noreferrer" target="_blank" className="text-decoration-none text-14 text-color-tertiary">
                                     <i className="me-2"><FaPhoneAlt /></i>
-                                    68123456789
+                                    (021) 89970329
                                 </a>
                                 <span className="mx-2 text-black-50">|</span>
                                 <a href="mailto:admin@gmail.com" rel="noreferrer" target="_blank" className="text-decoration-none text-14 text-color-tertiary">
                                     <i className="me-2"><FaRegEnvelope /></i>
-                                    admin@gmail.com
+                                    desakedungwaringin767@gmail.com 
                                 </a>
                             </div>
                         </div>
@@ -113,13 +122,13 @@ export default function NavBarTop() {
                             <Image
                                 alt="logo desa"
                                 src={imgLogo}
-                                height="50"
-                                width="50"
+                                height="45"
+                                width="45"
                                 className="img-fluid"
                             />{" "}
                             <div>
-                                <h5 className="ms-1 my-0 fw-600 text-color-primary">Desa {namaDesa}</h5>
-                                <p className="ms-1 mb-0 text-15 text-color-tertiary">Kabupaten Bangkalan</p>
+                                <h5 className="ms-1 my-0 fw-600 text-color-primary">kedungwaringin {namaDesa}</h5>
+                                <p className="ms-1 mb-0 text-15 text-color-tertiary">Kabupaten Bekasi</p>
                             </div>
                         </a>
                     </Link>
@@ -153,38 +162,6 @@ export default function NavBarTop() {
                                             <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Visi Misi</a>
                                         </ActiveLink>
                                     </li>
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/struktur">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Struktur Organisasi</a>
-                                        </ActiveLink>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav-item dropdown ms-lg-1">
-                                <a className="nav-link dropdown-toggle text-color-tertiary" href="#" id="informasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Informasi
-                                </a>
-                                <ul className="dropdown-menu bg-color-primary" aria-labelledby="informasiDropdown">
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/berita">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Berita</a>
-                                        </ActiveLink>
-                                    </li>
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/agenda">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Agenda</a>
-                                        </ActiveLink>
-                                    </li>
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/produkhukum">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Produk Hukum</a>
-                                        </ActiveLink>
-                                    </li>
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/informasipublik">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Informasi Publik</a>
-                                        </ActiveLink>
-                                    </li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown ms-lg-1">
@@ -210,23 +187,24 @@ export default function NavBarTop() {
                                 </ul>
                             </li>
                             <li className="nav-item dropdown ms-lg-1">
-                                <a className="nav-link dropdown-toggle text-color-tertiary" href="#" id="galeriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Media
+                                <a className="nav-link dropdown-toggle text-color-tertiary" href="#" id="bumdesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Bumdes
                                 </a>
-                                <ul className="dropdown-menu bg-color-primary" aria-labelledby="galeriDropdown">
+                                <ul className="dropdown-menu bg-color-primary" aria-labelledby="bumdesDropdown">
                                     <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/foto">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Galeri Foto</a>
+                                        <ActiveLink activeClassName="active" href="/lapak">
+                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Unit Usaha</a>
                                         </ActiveLink>
                                     </li>
                                     <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/video">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Galeri Video</a>
+                                        <ActiveLink activeClassName="active" href="/struktur-bumdes">
+                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Struktur Organisasi</a>
                                         </ActiveLink>
                                     </li>
                                 </ul>
                             </li>
-                            <li className="nav-item dropdown ms-lg-1">
+
+                            {/* <li className="nav-item dropdown ms-lg-1">
                                 <a className="nav-link dropdown-toggle text-color-tertiary" href="#" id="publikasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Publikasi
                                 </a>
@@ -242,17 +220,7 @@ export default function NavBarTop() {
                                         </ActiveLink>
                                     </li>
                                 </ul>
-                            </li>
-                            <li className="nav-item ms-lg-1">
-                                <ActiveLink activeClassName="active" href="/lapak">
-                                    <a className="nav-link text-color-tertiary">Lapak</a>
-                                </ActiveLink>
-                            </li>
-                            <li className="nav-item ms-lg-1">
-                                <ActiveLink activeClassName="active" href="/covid">
-                                    <a className="nav-link text-color-tertiary">Covid</a>
-                                </ActiveLink>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item ms-lg-1">
                                 <a className="nav-link" aria-current="page"><ThemeToggle /></a>
                             </li> */}

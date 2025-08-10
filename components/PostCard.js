@@ -43,6 +43,7 @@ export default function PostCard({ id, image, title, slug, author, date, excerpt
                     height="200"
                     quality={90}
                     className="img-fluid rounded"
+                    style={{objectFit: 'cover', objectPosition: 'center'}}
                 />
                 <div className="card-body">
                     

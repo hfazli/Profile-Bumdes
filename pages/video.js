@@ -69,10 +69,25 @@ export async function getServerSideProps({ res }) {
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
     )
-    const getDataVideos = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/video`);
-    const videos = await getDataVideos.json();
-    // console.log(photos)
-    return {
-        props: { videos }, // will be passed to the page component as props
-    };
+    
+    try {
+        const getDataVideos = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/video`);
+        
+        if (!getDataVideos.ok) {
+            console.log('Video API not available, using fallback data');
+            return {
+                props: { videos: [] },
+            };
+        }
+        
+        const videos = await getDataVideos.json();
+        return {
+            props: { videos },
+        };
+    } catch (error) {
+        console.error('Error fetching videos:', error);
+        return {
+            props: { videos: [] },
+        };
+    }
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaBriefcase, FaGraduationCap, FaMoon, FaPeopleArrows } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaPeopleArrows } from "react-icons/fa";
 
 export default function StatisticLink() {
 
@@ -43,8 +43,8 @@ export default function StatisticLink() {
             <section className="statistic my-5 py-5 text-center container">
                 <h3 className="text-color-primary">Statistik Desa</h3>
                 <p className="text-color-secondary text-subtitle">Berikut Adalah Statistik Demografi Desa Kami</p>
-                <div className="row row-cols-1 row-cols-md-4 g-4 mt-5">
-                    <div className="col-6 col-md-3">
+                <div className="row row-cols-1 row-cols-md-3 g-4 mt-5 justify-content-center">
+                    <div className="col-md-4">
                         <div className="card bg-card-primary h-100 border-0 shadow-custom" data-aos="fade-up" data-aos-duration="500">
                             <div className="masthead-followup-icon mb-2 text-white bg-danger mx-auto mt-4">
                                 <i className="icon">
@@ -60,7 +60,7 @@ export default function StatisticLink() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 col-md-3">
+                    <div className="col-md-4">
                         <div className="card bg-card-primary h-100 border-0 shadow-custom" data-aos="fade-up" data-aos-duration="1000">
                             <div className="masthead-followup-icon mb-2 text-white bg-info mx-auto mt-4">
                                 <i className="icon">
@@ -76,24 +76,8 @@ export default function StatisticLink() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 col-md-3">
+                    <div className="col-md-4">
                         <div className="card bg-card-primary h-100 border-0 shadow-custom" data-aos="fade-up" data-aos-duration="1500">
-                            <div className="masthead-followup-icon mb-2 text-white bg-warning mx-auto mt-4">
-                                <i className="icon">
-                                    <FaMoon />
-                                </i>
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">
-                                    <Link href="/penduduk#agama">
-                                        <a className="stretched-link">Agama</a>
-                                    </Link>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-6 col-md-3">
-                        <div className="card bg-card-primary h-100 border-0 shadow-custom" data-aos="fade-up" data-aos-duration="2000">
                             <div className="masthead-followup-icon mb-2 text-white bg-success mx-auto mt-4">
                                 <i className="icon">
                                     <FaPeopleArrows />

@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import NavBarTop from "../components/NavBarTop";
 import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
 import BackToTop from "../components/BackToTop";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const title = "Wilayah Administrasi";
 
-export default function InformasiPublik({ covid }) {
-    let [namaDesa, setNamaDesa] = useState("Alang Alang");
-    let [namaKecamatan, setNamaKecamatan] = useState("Tragah");
+export default function InformasiPublik() {
+    const namaDesa = "Kedungwaringin";
+    const namaKecamatan = "Kedungwaringin";
 
     useEffect(() => {
-        namaDesa = localStorage.getItem("namaDesa");
-        setNamaDesa(namaDesa);
-        namaKecamatan = localStorage.getItem("namaKecamatan");
-        setNamaKecamatan(namaKecamatan);
-    })
-
-    // const dataGender = populateData(gender);
-    // const [totalKonfirmasi, totalAktif, totalSembuh, totalMeninggal] = getTotalData(covid);
-    // console.log(covid.dataKecamatan);
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
+            mirror: false
+        });
+    }, []);
 
     return (
         <>
@@ -36,12 +36,11 @@ export default function InformasiPublik({ covid }) {
                 <title>{title}</title>
                 <meta name="description" content={`Website Desa ${namaDesa}`} />
                 <link rel="icon" href="/favicon.ico" />
-                {/* <!-- Open Graph / Facebook --> */}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={process.env.NEXT_PUBLIC_API_URL} />
                 <meta property="og:title" content={`Situs Resmi Desa ${namaDesa}`} />
                 <meta property="og:description" content={`Website Resmi Desa ${namaDesa}. Media komunikasi dan transparansi Pemerintah Desa`} />
-                <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URL}/metalogo.jpg`}></meta>
+                <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URL}/metalogo.jpg`} />
             </Head>
 
             <NavBarTop />
@@ -52,139 +51,82 @@ export default function InformasiPublik({ covid }) {
                 </div>
 
                 <div className="container my-5">
-                    <div className="card bg-card-primary border-0 shadow-custom px-3 pt-3">
-                        <h4 className="text-color-primary">Wilayah Administrasi</h4>
+                    <div 
+                        className="card bg-card-primary border-0 shadow-custom px-3 pt-3"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <h4 
+                            className="text-color-primary"
+                            data-aos="fade-right"
+                            data-aos-delay="200"
+                        >
+                            Wilayah Administrasi
+                        </h4>
                         <hr className="mb-4" />
-                        <h5 className="text-color-primary">Topografi Desa</h5>
-                        <p className="text-color-secondary">
-                            Luas wilayah di Desa {namaDesa} ± 965 Ha, dengan topografi
-                            bergelombang, peruntukan lahan sebagian besar untuk lahan perkebunan
-                            Masyarakat, kemudian untuk pemukiman, sarana umum, pemerintahan dan
-                            lainnya. Iklim Desa {namaDesa} sebagai mana desa-desa lainnya di wilayah
-                            Indonesia yaitu iklim tropis (musim penghujan dan musim kemarau), hal
-                            tersebut mempunyai pengaruh langsung terhadap pala tanam terhadap lahan
-                            pertanian yang ada di Desa {namaDesa} Kecamatan {namaKecamatan}.
+                        <h5 
+                            className="text-color-primary"
+                            data-aos="fade-right"
+                            data-aos-delay="300"
+                        >
+                            Topografi Desa
+                        </h5>
+                        <p 
+                            className="text-color-secondary"
+                            data-aos="fade-up"
+                            data-aos-delay="400"
+                        >
+                            Luas wilayah di Desa {namaDesa} ± 965 Ha, dengan topografi bergelombang,
+                            peruntukan lahan sebagian besar untuk lahan perkebunan masyarakat,
+                            kemudian untuk pemukiman, sarana umum, pemerintahan dan lainnya. Iklim
+                            Desa {namaDesa} seperti desa-desa lainnya di Indonesia adalah iklim tropis
+                            (musim penghujan dan musim kemarau), yang memengaruhi pola tanam
+                            pertanian di Desa {namaDesa}, Kecamatan {namaKecamatan}.
                         </p>
-                        <h5 className="mt-3 text-color-primary">Detail Wilayah</h5>
-                        <div className="table-responsive col-lg-5">
+                        <h5 
+                            className="mt-3 text-color-primary"
+                            data-aos="fade-right"
+                            data-aos-delay="500"
+                        >
+                            Detail Wilayah
+                        </h5>
+                        <div 
+                            className="table-responsive col-lg-5"
+                            data-aos="fade-up"
+                            data-aos-delay="600"
+                        >
                             <table className="table text-color-secondary table-borderless">
                                 <tbody>
                                     <tr>
                                         <td>Luas Wilayah</td>
                                         <td>: 1.056 ha</td>
                                     </tr>
-                                    <tr>
-                                        <td>Batas Wilayah</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Utara</td>
-                                        <td>: Desa Banjarsari</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Selatan</td>
-                                        <td>: Desa gajah Mati</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Barat</td>
-                                        <td>: Desa Mekarsari</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Timur</td>
-                                        <td>: Desa Retak Mudik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Klimatologi</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Suhu</td>
-                                        <td>: 30ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Curah Hujan</td>
-                                        <td>: 43 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kelembaban Udara</td>
-                                        <td>: 83 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kecepatan Angin</td>
-                                        <td>: 20 km/h</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Luas Lahan Pertanian</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ladang Sawit</td>
-                                        <td>: 2 Ha</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Luas Lahan Perkebunan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Perkebunan Rakyat </td>
-                                        <td>: 5 Ha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Perkebunan Swasta</td>
-                                        <td>: 4 Ha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Perkebunan Perorangan</td>
-                                        <td>: 3 Ha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Luas Lahan Pemukiman</td>
-                                        <td>: 2 Ha/m2</td>
-                                    </tr>
+                                    <tr><td>Batas Wilayah</td></tr>
+                                    <tr><td>Utara</td><td>: Desa Wanasari</td></tr>
+                                    <tr><td>Selatan</td><td>: Desa Segarjaya</td></tr>
+                                    <tr><td>Barat</td><td>: Desa Cikarang Timur</td></tr>
+                                    <tr><td>Timur</td><td>: Desa Jayamukti</td></tr>
+                                    <tr><td>Klimatologi</td></tr>
+                                    <tr><td>Suhu</td><td>: 30ºC</td></tr>
+                                    <tr><td>Curah Hujan</td><td>: 43%</td></tr>
+                                    <tr><td>Kelembaban Udara</td><td>: 83%</td></tr>
+                                    <tr><td>Kecepatan Angin</td><td>: 20 km/h</td></tr>
+                                    <tr><td>Luas Lahan Pertanian</td></tr>
+                                    <tr><td>Ladang Sawit</td><td>: 2 Ha</td></tr>
+                                    <tr><td>Luas Lahan Perkebunan</td></tr>
+                                    <tr><td>Perkebunan Rakyat</td><td>: 5 Ha</td></tr>
+                                    <tr><td>Perkebunan Swasta</td><td>: 4 Ha</td></tr>
+                                    <tr><td>Perkebunan Perorangan</td><td>: 3 Ha</td></tr>
+                                    <tr><td>Luas Lahan Pemukiman</td><td>: 2 Ha/m2</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-
             </main>
 
             <Footer />
-
             <BackToTop />
         </>
     );
-};
-
-// This gets called on every request to this page
-// export async function getServerSideProps() {
-//     const getDataCovid = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/covid`);
-//     const covid = await getDataCovid.json();
-//     return {
-//         props: { covid }, // will be passed to the page component as props
-//     };
-// };
-
-// Count each row value for total row
-// function getTotalData(param) {
-//     const konfirmasi = [], aktif = [], sembuh = [], meninggal = [];
-//     let totalKonfirmasi = 0, totalAktif = 0, totalSembuh = 0, totalMeninggal = 0;
-//     param.dataKecamatan.map(item =>
-//         konfirmasi.push(item.konfirmasi)
-//     );
-//     param.dataKecamatan.map(item =>
-//         aktif.push(item.aktif)
-//     );
-//     param.dataKecamatan.map(item =>
-//         sembuh.push(item.sembuh)
-//     );
-//     param.dataKecamatan.map(item =>
-//         meninggal.push(item.meninggal)
-//     );
-
-//     for (let index = 0; index < konfirmasi.length; index++) {
-//         totalKonfirmasi += parseInt(konfirmasi[index]);
-//         totalAktif += parseInt(aktif[index]);
-//         totalSembuh += parseInt(sembuh[index]);
-//         totalMeninggal += parseInt(meninggal[index]);
-//     }
-
-//     return [totalKonfirmasi, totalAktif, totalSembuh, totalMeninggal];
-// }
+}

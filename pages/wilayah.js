@@ -146,11 +146,27 @@ export async function getServerSideProps({ res }) {
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
     )
-    const getDataArea = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/wilayah`);
-    const area = await getDataArea.json();
-    return {
-        props: { area }, // will be passed to the page component as props
-    };
+    
+    try {
+        const getDataArea = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/wilayah`);
+        
+        if (!getDataArea.ok) {
+            console.log('Area API not available, using fallback data');
+            return {
+                props: { area: [] },
+            };
+        }
+        
+        const area = await getDataArea.json();
+        return {
+            props: { area },
+        };
+    } catch (error) {
+        console.error('Error fetching area data:', error);
+        return {
+            props: { area: [] },
+        };
+    }
 };
 
 // Populate Data for ChartJS 

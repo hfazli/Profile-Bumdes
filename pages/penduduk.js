@@ -43,7 +43,7 @@ const options = {
 
 const title = "Demografis Penduduk";
 
-export default function Penduduk({ gender, education, religion, pekerjaan, status, usia }) {
+export default function Penduduk({ gender, education, pekerjaan, status, usia }) {
 
     let [namaDesa, setNamaDesa] = useState("Alang Alang");
 
@@ -57,9 +57,6 @@ export default function Penduduk({ gender, education, religion, pekerjaan, statu
 
     const dataEducation = populateData(education);
     const totalDataEducation = getTotalData(education);
-
-    const dataReligion = populateData(religion);
-    const totalDataReligion = getTotalData(religion);
 
     const dataPekerjaan = populateData(pekerjaan);
     const totalDataPekerjaan = getTotalData(pekerjaan);
@@ -182,49 +179,6 @@ export default function Penduduk({ gender, education, religion, pekerjaan, statu
                                         <tr>
                                             <td colSpan="2" className="text-center fw-600">Jumlah Total</td>
                                             <td className="fw-600">{totalDataEducation}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="card bg-card-primary rounded shadow-card border-0 my-5" id="agama">
-                        <div className="card-header bg-color-secondary py-3">
-                            <h5 className="m-0 font-weight-bold text-color-primary">Demografi Berdasarkan Agama</h5>
-                        </div>
-                        <div className="card-body">
-                            <h5 className="text-color-primary">Grafik</h5>
-                            <div className="col-md-8 col-lg-5 mx-auto">
-                                <Pie
-                                    options={options}
-                                    data={dataReligion}
-                                    width={400}
-                                    height={250}
-                                />
-                            </div>
-                            <h5 className="mt-5 text-color-primary">Tabel Data</h5>
-                            <div className="table-responsive mt-3">
-                                <table className="table table-bordered table-bordered-primary text-color-secondary">
-                                    <thead>
-                                        <tr>
-                                            <th className="fw-600">No</th>
-                                            <th className="fw-600">Kelompok</th>
-                                            <th className="fw-600">Jumlah</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {religion.map(item =>
-                                            <tr key={item.id}>
-                                                <td>{item.id}</td>
-                                                <td>{item.name}</td>
-                                                <td>{item.total}</td>
-                                            </tr>
-                                        )}
-
-                                        <tr>
-                                            <td colSpan="2" className="text-center fw-600">Jumlah Total</td>
-                                            <td className="fw-600">{totalDataReligion}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -377,21 +331,75 @@ export async function getServerSideProps({ res }) {
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=59'
     )
-    const getDataGender = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gender`);
-    const gender = await getDataGender.json();
-    const getDataEducation = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/education`);
-    const education = await getDataEducation.json();
-    const getDataReligion = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/religion`);
-    const religion = await getDataReligion.json();
-    const getDataPekerjaan = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pekerjaan`);
-    const pekerjaan = await getDataPekerjaan.json();
-    const getDataStatus = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/status`);
-    const status = await getDataStatus.json();
-    const getDataUsia = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/usia`);
-    const usia = await getDataUsia.json();
-    return {
-        props: { gender, education, religion, pekerjaan, status, usia }, // will be passed to the page component as props
-    };
+    
+    try {
+        let gender = [], education = [], pekerjaan = [], status = [], usia = [];
+        
+        // Fetch gender data
+        try {
+            const getDataGender = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gender`);
+            if (getDataGender.ok) {
+                gender = await getDataGender.json();
+            }
+        } catch (error) {
+            console.error('Error fetching gender data:', error);
+        }
+        
+        // Fetch education data
+        try {
+            const getDataEducation = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/education`);
+            if (getDataEducation.ok) {
+                education = await getDataEducation.json();
+            }
+        } catch (error) {
+            console.error('Error fetching education data:', error);
+        }
+        
+        // Fetch pekerjaan data
+        try {
+            const getDataPekerjaan = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pekerjaan`);
+            if (getDataPekerjaan.ok) {
+                pekerjaan = await getDataPekerjaan.json();
+            }
+        } catch (error) {
+            console.error('Error fetching pekerjaan data:', error);
+        }
+        
+        // Fetch status data
+        try {
+            const getDataStatus = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/status`);
+            if (getDataStatus.ok) {
+                status = await getDataStatus.json();
+            }
+        } catch (error) {
+            console.error('Error fetching status data:', error);
+        }
+        
+        // Fetch usia data
+        try {
+            const getDataUsia = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/usia`);
+            if (getDataUsia.ok) {
+                usia = await getDataUsia.json();
+            }
+        } catch (error) {
+            console.error('Error fetching usia data:', error);
+        }
+        
+        return {
+            props: { gender, education, pekerjaan, status, usia },
+        };
+    } catch (error) {
+        console.error('Error in getServerSideProps:', error);
+        return {
+            props: { 
+                gender: [], 
+                education: [], 
+                pekerjaan: [], 
+                status: [], 
+                usia: []
+            },
+        };
+    }
 };
 
 // Populate Data for ChartJS 

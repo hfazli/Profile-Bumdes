@@ -3,41 +3,40 @@ import Head from "next/head";
 import NavBarTop from "../components/NavBarTop";
 import Footer from "../components/Footer";
 import BreadcrumbArea from "../components/BreadcrumbArea";
-import imgDesa from "../public/hero.webp";
+import imgDesa from "../public/desa.jpg";
 import Image from "next/image";
 import BackToTop from "../components/BackToTop";
 
-const title = "Visi MIsi";
+const title = "Visi Misi";
 
 export default function Sejarah({ posts }) {
 
-    let [namaDesa, setNamaDesa] = useState("Alang Alang");
+    let [namaDesa, setNamaDesa] = useState("Kedungwaringin");
 
     useEffect(() => {
-        namaDesa = localStorage.getItem("namaDesa");
-        setNamaDesa(namaDesa);
-    });
-    
+        const desa = localStorage.getItem("namaDesa");
+        if (desa) {
+            setNamaDesa(desa);
+        }
+    }, []);
+
     return (
         <>
-
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={`Website Desa ${namaDesa}`} />
                 <link rel="icon" href="/favicon.ico" />
-                {/* <!-- Open Graph / Facebook --> */}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={process.env.NEXT_PUBLIC_API_URL} />
                 <meta property="og:title" content={`Situs Resmi Desa ${namaDesa}`} />
                 <meta property="og:description" content={`Website Resmi Desa ${namaDesa}. Media komunikasi dan transparansi Pemerintah Desa`} />
-                <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URL}/metalogo.jpg`}></meta>
+                <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URL}/metalogo.jpg`} />
             </Head>
 
             <NavBarTop />
 
             <main>
-
-                <BreadcrumbArea pageName="Visi Misi" currentPage="Visi Misi"/>
+                <BreadcrumbArea pageName="Visi Misi" currentPage="Visi Misi" />
 
                 <div className="container my-5">
                     <div className="col-lg-10 mx-auto">
@@ -46,36 +45,38 @@ export default function Sejarah({ posts }) {
                             <Image
                                 src={imgDesa}
                                 alt="Desa"
-                                className="img-fluid rounded my-3" />
+                                className="img-fluid rounded my-3"
+                            />
                             <h5 className="mt-4 text-color-primary">Visi</h5>
-                            <p className ="text-color-secondary">“ Terwujudnya Desa {namaDesa} sebagai Desa yang Mandiri melalui Pengembangan Ekonomi Berbasis Potensi Sumber Daya Alam untuk mencapai masyarakat makmur dan agamis ”</p>
-                            <h5 className="text-color-primary">Misi</h5>
-                            <p className ="text-color-secondary mb-2">1. Mewujudkan dan mengembangkan kegiatan keagamaan untuk menambah keimanan dan ketaqwaan kepada Tuhan Yang Maha Esa.</p>
-                            <p className ="text-color-secondary mb-2">2. Mewujudkan dan mendorong terjadinya usaha-usaha kerukunan antar dan intern warga masyarakat yang disebabkan karena adanya perbedaan agama, keyakinan, organisasi, dan lainnya dalam suasana saling menghargai dan menghormati.</p>
-                            <p className ="text-color-secondary mb-2">3. Membangun dan meningkatkan hasil perkebunan dengan jalan penataan pengairan dan pemupukan.</p>
-                            <p className ="text-color-secondary mb-2">4. Menata Pemerintahan Desa {namaDesa} yang kompak dan bertanggung jawab dalam mengemban amanat masyarakat.</p>
-                            <p className ="text-color-secondary mb-2">5. Meningkatkan pelayanan masyarakat secara terpadu dan serius.</p>
-                            <p className ="text-color-secondary mb-2">6. Membangun dan mendorong majunya bidang pendidikan baik formal maupun informal yang mudah diakses dan dinikmati seluruh warga masyarakat tanpa terkecuali yang mampu menghasilkan insan intelektual, inovatif dan enterpreneur (wirausahawan).</p>
-                            <p className ="text-color-secondary mb-2">7. Meningkatkan SDM masyarakat agat lebih mampu dalam mengakses Computer dan Internet.</p>
-                            <p className ="text-color-secondary mb-2">8. Meningkatkan kesehatan masyarakat</p>
-                        </div>
-				    </div>
-                </div>
+                            <p className="text-color-secondary">
+                                “Terwujudnya Desa {namaDesa} yang Mandiri, Sejahtera, dan Berbudaya melalui Pemberdayaan Masyarakat dan Pengelolaan Sumber Daya Lokal yang Berkelanjutan”
+                            </p>
 
+                            <h5 className="text-color-primary">Misi</h5>
+                            <p className="text-color-secondary mb-2">1. Meningkatkan kualitas pelayanan publik yang cepat, tepat, dan transparan.</p>
+                            <p className="text-color-secondary mb-2">2. Mendorong pertumbuhan ekonomi desa melalui pengembangan UMKM dan potensi lokal.</p>
+                            <p className="text-color-secondary mb-2">3. Mengembangkan infrastruktur desa yang mendukung aktivitas sosial dan ekonomi masyarakat.</p>
+                            <p className="text-color-secondary mb-2">4. Meningkatkan mutu pendidikan, keterampilan, dan pemanfaatan teknologi bagi masyarakat.</p>
+                            <p className="text-color-secondary mb-2">5. Mewujudkan lingkungan desa yang bersih, sehat, dan lestari.</p>
+                            <p className="text-color-secondary mb-2">6. Memperkuat nilai-nilai budaya lokal dan kerukunan antarwarga.</p>
+                            <p className="text-color-secondary mb-2">7. Menjalin kemitraan strategis dengan berbagai pihak dalam mendukung pembangunan desa.</p>
+                            <p className="text-color-secondary mb-2">8. Meningkatkan partisipasi aktif masyarakat dalam perencanaan dan pelaksanaan pembangunan desa.</p>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <Footer />
-
             <BackToTop />
         </>
     );
-};
+}
 
-// This gets called on every request to this page
+// Optional: Server-side fetching
 // export async function getServerSideProps() {
 //     const getAllPosts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post`);
 //     const posts = await getAllPosts.json();
 //     return {
-//         props: { posts }, // will be passed to the page component as props
+//         props: { posts },
 //     };
-// };
+// }

@@ -36,6 +36,7 @@ export default function AgendaCard({ id, slug, image, title, location, date, tim
                             height="160"
                             quality={90}
                             className="img-fluid rounded"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
                     </div>
                     <div className="col-sm-8">
