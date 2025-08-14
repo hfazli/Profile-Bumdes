@@ -371,27 +371,121 @@ export default function Lapak({products}) {
                         </div>
                     </div>
 
-                    {/* Produk Unggulan */}
-                    <div className="row mb-5">
+                    {/* Produk Unggulan BUMDes */}
+                    <div className="row mb-5" id="produk-unggulan">
                         <div className="col-lg-12">
                             <h3 className="text-color-primary text-center mb-4" data-aos="fade-up">Produk Unggulan BUMDes</h3>
+                            <p className="text-center text-color-secondary mb-5" data-aos="fade-up" data-aos-delay="100">
+                                Berbagai produk berkualitas tinggi hasil usaha peternakan dan perikanan BUMDes Kedungwaringin
+                            </p>
                             <div className="row g-4">
-                                {products.slice(0, 4).map((product, index) =>
-                                    <div className="col-sm-6 col-md-4 col-lg-3" key={product.id}>
-                                        <div data-aos="zoom-in" data-aos-delay={100 + (index * 100)}>
-                                            <ProductCard 
-                                                id={product.id} 
-                                                slug={product.slug} 
-                                            name={product.name} 
-                                            category={product.category}
-                                            price={product.price} 
-                                            image={product.image} 
-                                            phone={product.phone}
-                                            seller={product.seller} 
-                                            description={product.description} />
+                                {/* Telur Bebek */}
+                                <div className="col-md-6 col-lg-3">
+                                    <div className="card h-100 border-0 shadow-sm product-card" data-aos="zoom-in" data-aos-delay="100">
+                                        <div className="position-relative overflow-hidden" style={{height: '200px'}}>
+                                            <Image 
+                                                src="/4.jpeg" 
+                                                alt="Telur Bebek" 
+                                                width={300}
+                                                height={200}
+                                                style={{objectFit: 'cover', width: '100%', height: '100%'}}
+                                                className="card-img-top"
+                                            />
+                                            <div className="position-absolute top-0 end-0 bg-success text-white px-2 py-1 m-2 rounded-pill">
+                                                <small className="fw-bold">Segar</small>
+                                            </div>
+                                        </div>
+                                        <div className="card-body text-center p-3">
+                                            <h5 className="text-color-primary mb-2">Telur Bebek</h5>
+                                            <p className="text-color-secondary small mb-2">Telur bebek segar berkualitas tinggi</p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <span className="text-success fw-bold">Rp. 3.000/butir</span>
+                                                <span className="badge bg-primary">Makanan</span>
+                                            </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
+
+                                {/* Ikan Lele */}
+                                <div className="col-md-6 col-lg-3">
+                                    <div className="card h-100 border-0 shadow-sm product-card" data-aos="zoom-in" data-aos-delay="200">
+                                        <div className="position-relative overflow-hidden" style={{height: '200px'}}>
+                                            <Image 
+                                                src="/lele.jpg" 
+                                                alt="Ikan Lele" 
+                                                width={300}
+                                                height={200}
+                                                style={{objectFit: 'cover', width: '100%', height: '100%'}}
+                                                className="card-img-top"
+                                            />
+                                            <div className="position-absolute top-0 end-0 bg-success text-white px-2 py-1 m-2 rounded-pill">
+                                                <small className="fw-bold">Fresh</small>
+                                            </div>
+                                        </div>
+                                        <div className="card-body text-center p-3">
+                                            <h5 className="text-color-primary mb-2">Lele Mutiara</h5>
+                                            <p className="text-color-secondary small mb-2">Ikan lele segar hasil budidaya bioflok</p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <span className="text-success fw-bold">Rp. 15.000/kg</span>
+                                                <span className="badge bg-info">Makanan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Ikan Patin */}
+                                <div className="col-md-6 col-lg-3">
+                                    <div className="card h-100 border-0 shadow-sm product-card" data-aos="zoom-in" data-aos-delay="300">
+                                        <div className="position-relative overflow-hidden" style={{height: '200px'}}>
+                                            <Image 
+                                                src="/patin.png" 
+                                                alt="Ikan Patin" 
+                                                width={300}
+                                                height={200}
+                                                style={{objectFit: 'cover', width: '100%', height: '100%'}}
+                                                className="card-img-top"
+                                            />
+                                            <div className="position-absolute top-0 end-0 bg-warning text-dark px-2 py-1 m-2 rounded-pill">
+                                                <small className="fw-bold">Premium</small>
+                                            </div>
+                                        </div>
+                                        <div className="card-body text-center p-3">
+                                            <h5 className="text-color-primary mb-2">Ikan Patin</h5>
+                                            <p className="text-color-secondary small mb-2">Ikan patin berkualitas tinggi</p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <span className="text-success fw-bold">Rp. 16.000/kg</span>
+                                                <span className="badge bg-info">Makanan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Bebek Dewasa */}
+                                <div className="col-md-6 col-lg-3">
+                                    <div className="card h-100 border-0 shadow-sm product-card" data-aos="zoom-in" data-aos-delay="400">
+                                        <div className="position-relative overflow-hidden" style={{height: '200px'}}>
+                                            <Image 
+                                                src="/bumdes.jpg" 
+                                                alt="Bebek Dewasa" 
+                                                width={300}
+                                                height={200}
+                                                style={{objectFit: 'cover', width: '100%', height: '100%'}}
+                                                className="card-img-top"
+                                            />
+                                            <div className="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 m-2 rounded-pill">
+                                                <small className="fw-bold">Unggul</small>
+                                            </div>
+                                        </div>
+                                        <div className="card-body text-center p-3">
+                                            <h5 className="text-color-primary mb-2">Anak Itik</h5>
+                                            <p className="text-color-secondary small mb-2">Bebek siap potong atau bertelur</p>
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <span className="text-success fw-bold">Rp. 15.000/ekor</span>
+                                                <span className="badge bg-warning">Ternak</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
