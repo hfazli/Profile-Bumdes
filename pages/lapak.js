@@ -16,6 +16,7 @@ import imgLogo from "../public/logo.png";
 import imgBumdes2 from "../public/bumdes (2).jpg";
 import imgLele from "../public/lele.jpg";
 import imgEmpang from "../public/empang.jpg";
+import imgLogoBumdes from "../public/logobumdes.jpg";
 
 
 const title = "BUMDes Kedungwaringin";
@@ -189,6 +190,13 @@ export default function Lapak({products}) {
                                         <Image 
                                             src={img2}
                                             alt="Logo BUMDes"
+                                            width={120}
+                                            height={120}
+                                            style={{ objectFit: 'contain' }}
+                                        />
+                                        <Image 
+                                            src={imgLogoBumdes}
+                                            alt="Logo BUMDes Kedungwaringin"
                                             width={120}
                                             height={120}
                                             style={{ objectFit: 'contain' }}

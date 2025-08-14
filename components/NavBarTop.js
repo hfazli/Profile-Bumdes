@@ -196,11 +196,6 @@ export default function NavBarTop() {
                                             <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Unit Usaha</a>
                                         </ActiveLink>
                                     </li>
-                                    <li className="me-2">
-                                        <ActiveLink activeClassName="active" href="/struktur-bumdes">
-                                            <a className="nav-link nav-link-focus text-color-tertiary ms-2 ps-2 ms-md-2">Struktur Organisasi</a>
-                                        </ActiveLink>
-                                    </li>
                                 </ul>
                             </li>
 
