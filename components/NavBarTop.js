@@ -110,6 +110,10 @@ export default function NavBarTop() {
                                 <a href="https://www.instagram.com/" className="mx-2 text-color-tertiary" aria-label="Instagram" rel="noreferrer" target="_blank">
                                     <i className=""><FaInstagram /></i>
                                 </a>
+                                {/* Link UBP Karawang */}
+                                <a href="https://www.ubpkarawang.ac.id" className="mx-2 text-color-tertiary fw-600" aria-label="UBP Karawang" rel="noreferrer" target="_blank">
+                                    UBP Karawang
+                                </a>
                             </div>
                         </div>
                     </div>
